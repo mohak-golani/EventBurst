@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="box">
+        <a href="{% url 'past_events' %}"><button>Past Events</button></a>
+        <ul>
+            {% if past_events %}
+                <li>Event Title: {{ past_events.0.title }}</li>
+                <li>Event Description: {{ past_events.0.description }}</li>
+                <li>Start Date: {{ past_events.0.start_date }}</li>
+                <li>End Date: {{ past_events.0.end_date }}</li>
+                <!-- Include description if needed -->
+                <!-- <li>Event Description: {{ past_events.0.description }}</li> -->
+            {% else %}
+                <li>No past events available</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box">
+        <a href="{% url 'upcoming_events' %}"><button>Upcoming Events</button></a>
+        <ul>
+            {% if upcoming_events %}
+                {% for event in upcoming_events %}
+                    <li>
+                        <strong>{{ event.title }}</strong><br>
+                        Event Description: {{ event.description }}<br>
+                        Start Date: {{ event.start_date }}<br>
+                        End Date: {{ event.end_date }}<br>
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" alt="{{ event.title }} Image" style="max-width: 200px;">
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>No upcoming events available</li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

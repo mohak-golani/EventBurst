@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Event Management{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'assets/images/bgimage.png' %}");
+            background-size: cover;
+            background-position: center;
+            /* Adjust background properties as needed */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar-left">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'events' %}">Events</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+        </ul>
+        <ul class="navbar-right">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Login</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'login' %}">User Login</a>
+                        <a href="{% url 'organizer_login' %}">Organizer Login</a>
+                        <a href="/admin">Admin Login</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Register</a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'register' %}">User Register</a>
+                        <a href="{% url 'organizer_register' %}">Organizer Register</a>
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    
+    <div class="content">
+        {% block content %}
+        <!-- Your content --> 
+        {% endblock %}
+    </div>
+</body>
+</html>

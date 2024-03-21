@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Organizer Dashboard{% endblock %}
+{% block content %}
+<div class ="container">
+  <h3>Create New Event:</h3>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="title">Event Title:</label>
+    <input type="text" name="title" required><br>
+    <label for="description">Description:</label>
+    <textarea name="description" rows="4" cols="50" required></textarea><br>
+    <label for="start_date">Start Date:</label>
+    <input type="datetime-local" name="start_date" required><br>
+    <label for="end_date">End Date:</label>
+    <input type="datetime-local" name="end_date" required><br>
+    <label for="image">Event Image:</label>
+    <input type="file" name="image" accept="image/*"><br>
+    <button type="submit">Post Event</button>
+  </form>
+</div>
+  <!-- Add organizer-specific content here -->
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Events</title>
+</head>
+<body>
+    <h1>Past Events</h1>
+    <div class="container">
+        <div class="box">
+            <h2>List of Past Events</h2>
+            <ul>
+                {% for event in past_events %}
+                    <li>
+                        <strong>Event Title: {{ event.title }}</strong><br>
+                        Description: {{ event.description }}<br>
+                        Start Date: {{ event.start_date }}<br>
+                        End Date: {{ event.end_date }}<br>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

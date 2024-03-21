@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    h1{
+        color: black;
+        font-style: italic;
+        font-weight: bolder;
+    }
+    .center{
+        max-width: auto;
+        height: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<img src="{% static 'assets/images/logo1.png' %}" alt="EventBurst Logo" class="center"> </img>
+<div class="container">
+    <h1>Welcome to EventBurst</h1>
+    <div class="box">
+        <a href="{% url 'about' %}"><button>About</button></a>
+        <p>EventBurst is a website which is based on making the management of events smoother by giving it a digital experience. Broadly speaking we allow users to register for events as well as organise events, you can contact us by clicking below.</p>
+        <a href="{% url 'contact_us' %}"><button>Contact us</button></a> <!-- Link to the contact_us page -->
+    </div>
+</div>
+
+{% endblock %}

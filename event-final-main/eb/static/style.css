@@ -1,0 +1,140 @@
+/* Navigation bar */
+nav {
+    background-color: #c30303;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    color: red; /* Change the text color to red */
+}
+
+.navbar-left {
+    float: left;
+}
+
+.navbar-right {
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(2, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #fffdfdf1;
+}
+
+/* Page content */
+.content {
+    padding: 20px;
+}
+
+/* Forms */
+form {
+    margin: 0 auto;
+    width: 50%;
+}
+
+/* Buttons */
+button {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+    width: 10%;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+    border-color: #0056b3;
+}
+
+/* Text inputs */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=date],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=date]:focus,
+select:focus {
+    outline: none;
+    border: 1px solid #4CAF50;
+}
+
+/* Error messages */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Background image */
+.container {
+    max-width: 120%;
+    height: 300px;
+    margin: 20px;
+    padding: 50px;
+    border: 2px solid #000;
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0; /* Fallback background color */
+    opacity: 0.7;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none; /* Hide dropdown content by default */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Display dropdown content when dropdown is hovered */
+}
+
+/* Remove unused classes */
+/* .box {
+    background-color: transparent;
+    padding: 20px;
+    margin-bottom: 20px;
+    clear: both;
+}
+
+.about {
+    background-color: transparent;
+    padding: 20px;
+    margin-bottom: 20px;
+} */
+
+/* Apply blue color to user dashboard */
+.user-dashboard {
+    color: white; /* Change font color to blue */
+}
